@@ -1,0 +1,194 @@
+.feature {
+  padding-top: 7rem;
+
+  &-heading {
+    @include flexBox(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+  }
+
+  &-title {
+    font-size: 3.4rem;
+    line-height: lineHeight(40, 34);
+    font-weight: 700;
+    text-transform: capitalize;
+
+    @include flexBox(
+      (
+        align-items: center,
+        gap: 0 0.5rem,
+      )
+    );
+
+    span:last-child {
+      color: $primary-color;
+    }
+  }
+
+  &-actions,
+  &-special-actions {
+    span {
+      color: $gray;
+      font-size: 1.2rem;
+      @include size(
+        (
+          width: 2.9rem,
+          height: 2.9rem,
+        )
+      );
+      @include flexBox(
+        (
+          justify-content: center,
+          align-items: center,
+        )
+      );
+
+      border-radius: 100rem;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background: $black;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+
+    @include flexBox(
+      (
+        gap: 0 1rem,
+      )
+    );
+  }
+
+  &-list {
+    margin-top: 6.5rem;
+    @include flexBox(
+      (
+        gap: 0 3.2rem,
+      )
+    );
+  }
+
+  &-item {
+    position: relative;
+
+    width: calc(25% - 2.4rem);
+    background: $gray-lighter;
+    padding: 2rem 3rem;
+    border-radius: 24px;
+
+    @include flexBox(
+      (
+        flex-direction: column,
+      )
+    );
+
+    &-heading {
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-transform: capitalize;
+
+      @include textClamp(1);
+      max-width: 12rem;
+    }
+
+    &-desc,
+    &-price {
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: lineHeight(25, 18);
+    }
+
+    &-desc {
+      margin-top: 1.6rem;
+
+      color: $gray-blur;
+      text-transform: capitalize;
+
+      @include textClamp(1);
+      max-width: 12rem;
+    }
+
+    &-price {
+      color: $primary-color;
+    }
+
+    &-image {
+      position: absolute;
+      right: 0;
+      top: -2rem;
+    }
+  }
+
+  &-special-actions {
+    display: none;
+  }
+
+  @include maxWidth(1279px) {
+    &-actions {
+      span {
+        font-size: 2rem;
+        @include size(
+          (
+            width: 5rem,
+            height: 5rem,
+          )
+        );
+      }
+    }
+    &-list {
+      flex-wrap: wrap;
+      gap: 3.2rem;
+    }
+    &-item {
+      width: calc(50% - 3.2rem);
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-actions {
+      span {
+        font-size: 1.2rem;
+        @include size(
+          (
+            width: 3rem,
+            height: 3rem,
+          )
+        );
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+    }
+
+    &-item {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    &-main {
+      position: relative;
+    }
+
+    &-actions {
+      display: none;
+    }
+
+    &-special-actions {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translate(-50% ,50%);
+    }
+  }
+}

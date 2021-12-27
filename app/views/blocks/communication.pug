@@ -1,0 +1,23 @@
+section.communication
+  .container 
+    .communication-main
+      .communication-top 
+        img.communication-image(srcset="./images/Screen.png 2x", alt="Screen pic")
+        .communication-content
+          span.communication-content-title Have you got our App?
+          span.communication-content-desc Best cooks and best delivery guys all at your service. Hot tasty food
+          .communication-content-actions
+            a(href="#").communication-content-btn
+              img.communication-content-image(srcset="./images/appstore.png 2x", alt="app store pic")
+              span.communication-content-text App store
+            a(href="#").communication-content-btn
+              img.communication-content-image(srcset="./images/chplay.png 2x", alt="ch play pic")
+              span.communication-content-text play store
+      .communication-bottom
+        .communication-bottom-content
+          span.communication-bottom-title Subscribe newsletter
+          span.communication-bottom-desc Best cooks and best delivery guys all at your service. Hot tasty food
+        form.communication-bottom-form(action="#")
+          input(type="text" placeholder="Enter your email address ..").communication-bottom-form-input
+          +globalButton({className:"btn--green communication-bottom-form-submit", text:"Discover", type: "submit"})
+

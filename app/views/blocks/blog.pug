@@ -1,0 +1,26 @@
+section.blog
+  .container 
+    .blog-main 
+      +globalContent({heading: "Newar Me", title: "Our regular updated new blogs.", desc: "Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 20mins.", className: "center"})
+      .blog-list
+        .blog-item 
+          img.blog-item-image(srcset="./images/blog-1.jpg 2x", alt="blog-1 pic")
+          .blog-item-content
+            span.blog-item-content-title Riders
+            span.blog-item-content-desc We store the vast majority of the digital assets in secure ..
+            a(href="#").blog-item-content-link
+              +globalButton({className:"btn--green huge", text: "Apply now", iconClass: "green", type:"submit"})
+        .blog-item 
+          img.blog-item-image(srcset="./images/blog-2.jpg 2x", alt="blog-2 pic")
+          .blog-item-content
+            span.blog-item-content-title Restaurants
+            span.blog-item-content-desc We store the vast majority of the digital assets in secure ..
+            a(href="#").blog-item-content-link
+              +globalButton({className:"btn--primary huge", text: "Apply now", iconClass: "primary", type:"submit"})
+        .blog-item 
+          img.blog-item-image(srcset="./images/blog-3.jpg 2x", alt="blog-3 pic")
+          .blog-item-content
+            span.blog-item-content-title Community
+            span.blog-item-content-desc We store the vast majority of the digital assets in secure ..
+            a(href="#").blog-item-content-link
+              +globalButton({className:"btn--yellow huge", text: "Apply now", iconClass: "yellow", type:"submit"})

@@ -1,0 +1,1 @@
+"use strict";var toggle=document.querySelector(".header-toggle"),menu=document.querySelector(".header-mobile-nav");toggle.addEventListener("click",function(){menu.classList.add("open")}),document.addEventListener("click",function(e){e.target.closest(".header-mobile-nav")||e.target.classList.contains("header-toggle")||menu.classList.remove("open")});

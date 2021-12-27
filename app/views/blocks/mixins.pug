@@ -1,0 +1,19 @@
+mixin globalContent({heading= "", title= "", desc= "", className= ""})
+  .global-content(class= className)
+    if heading
+      span.global-content-heading= heading
+    h1.global-content-title= title
+    if desc
+      p.global-content-desc= desc
+
+mixin globalButton({className= "", text= "", iconClass= "", type})
+  if type 
+    button(type="submit" class= className).btn.global-btn
+      span= text
+      span.global-btn-icon(class= iconClass)
+        i.fas.fa-chevron-right
+  else
+    a(href="#" class= className).btn.global-btn
+      span= text
+      span.global-btn-icon(class= iconClass)
+        i.fas.fa-chevron-right

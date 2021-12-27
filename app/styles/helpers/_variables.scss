@@ -1,0 +1,30 @@
+// Color
+$primary-color: #ff4415;
+$secondary-color: linear-gradient(to right, #3fda7d, #00be4c);
+$black: #101010;
+$gray: #666666;
+$gray-lighter: #f7f7f7;
+$gray-blur: #c7c7c7;
+$yellow: #ffbb27;
+$green: #46c266;
+$red: #FF4415;
+
+// Font
+$primary-font: "Inter", sans-serif;
+$secondary-font: "Seaweed Script", cursive;
+
+// Structure
+$wrapper: 1440px;
+$container: 1176px;
+
+:root {
+  --spacing: 12rem;
+
+  @media screen and (max-width: 1023px) {
+    --spacing: 7rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    --spacing: 5rem;
+  }
+}

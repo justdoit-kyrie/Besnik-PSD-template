@@ -1,0 +1,132 @@
+.portfolio {
+  padding-top: var(--spacing);
+  &-list {
+    margin: 5rem 0;
+
+    @include flexBox(
+      (
+        gap: 3rem,
+        flex-wrap: wrap,
+      )
+    );
+  }
+
+  &-item {
+    width: calc(calc(100% / 3) - 2rem);
+    padding: 1.8rem 2.8rem;
+    background: #fff;
+
+    border: 1px solid $gray-blur;
+    border-radius: 24px;
+
+    @include flexBox((
+      flex-direction: column,
+    ));
+
+    &-image {
+      margin: 0 auto;
+      height: 19rem;
+      object-fit: cover;
+    }
+
+    &-rating {
+      margin-top: 1.2rem;
+      color: $primary-color;
+
+      @include flexBox(
+        (
+          gap: 0 0.25rem,
+        )
+      );
+    }
+
+    &-title {
+      margin: 1.2rem 0;
+
+      font-size: 2rem;
+      line-height: lineHeight(24.2, 20);
+      font-weight: 600;
+    }
+
+    &-desc {
+      margin-bottom: 2.2rem;
+      
+      font-size: 1.6rem;
+      line-height: lineHeight(26, 16);
+      color: $gray;
+
+      @include textClamp(4);
+    }
+
+    &-bottom {
+      margin-top: auto;
+
+      @include flexBox(
+        (
+          align-items: center,
+          justify-content: space-between,
+        )
+      );
+    }
+
+    &-price {
+      font-size: 2rem;
+      line-height: lineHeight(24, 20);
+      font-weight: 500;
+    }
+
+    &-link {
+      @include flexBox(
+        (
+          gap: 0 1rem,
+        )
+      );
+    }
+
+    &-btn {
+      border-radius: 6px;
+      color: #fff;
+
+      @include flexBox(
+        (
+          justify-content: center,
+          align-items: center,
+        )
+      );
+    }
+  }
+
+  &-actions {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include maxWidth(1023px) {
+    &-item {
+      width: calc(50% - 1.5rem);
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      display: grid;
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-gap: 0 3rem;
+
+      overflow: auto;
+
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+
+      @include hideScroll();
+    }
+
+    &-item {
+      width: 100%;
+      scroll-snap-align: start;
+    }
+  }
+}

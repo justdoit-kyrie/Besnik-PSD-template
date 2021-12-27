@@ -1,0 +1,117 @@
+.hero {
+  position: relative;
+
+  &-image {
+    margin-left: auto;
+  }
+
+  &-main {
+    position: absolute;
+    top: 0;
+  }
+
+  &-form {
+    margin-top: 3.5rem;
+    position: relative;
+
+    &-input {
+      position: relative;
+      height: 6.4rem;
+      width: 100%;
+      padding: 0 19.5rem 0 1.6rem;
+
+      border-radius: 12px;
+      border: 1px solid $green;
+      outline: none;
+
+      &-icon {
+        @include absoluteCenter(y);
+        right: 17.5rem;
+        z-index: 10;
+        color: $gray-blur;
+      }
+    }
+
+    &-submit {
+      height: 100%;
+      padding: 0 2rem;
+
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      border-radius: 0 12px 12px 0;
+
+      cursor: pointer;
+    }
+  }
+
+  &-link {
+    margin-top: 5rem;
+
+    color: $gray;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: lineHeight(30, 18);
+
+    @include flexBox(
+      (
+        align-items: center,
+        gap: 0 0.5rem,
+      )
+    );
+
+    a {
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-main {
+      @include absoluteCenter("y");
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-image {
+      position: absolute;
+      right: 0;
+      max-width: 65%;
+    }
+
+    &-form {
+      max-width: 43.6rem;
+    }
+
+    &-link {
+      margin-top: 2rem;
+    }
+
+    &-main {
+      position: relative;
+      top: revert;
+      transform: revert;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-link {
+      font-size: 1.4rem;
+    }
+
+    &-form {
+      &-input {
+        padding-right: 13.5rem;
+        &-icon {
+          right: 11.5rem;
+        }
+      }
+      &-submit {
+        .global-btn-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}

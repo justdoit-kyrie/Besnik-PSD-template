@@ -1,0 +1,7 @@
+@function extend($obj, $ext-obj) {
+  @return map-merge($obj, $ext-obj);
+}
+
+@function lineHeight($height, $font) {
+  @return $height / $font;
+}

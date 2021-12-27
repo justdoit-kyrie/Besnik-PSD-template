@@ -1,0 +1,62 @@
+.popular {
+  padding: var(--spacing) 0;
+
+  &-main {
+    padding: 0 5rem 0 2rem;
+  }
+  &-heading {
+    font-size: 3.4rem;
+    line-height: lineHeight(40, 34);
+    font-weight: 700;
+
+    display: block;
+    margin-bottom: 4.2rem;
+  }
+
+  &-list {
+    @include flexBox(
+      (
+        gap: 0 10rem,
+      )
+    );
+  }
+
+  &-item {
+    width: calc(25% - 7.5rem);
+
+    span {
+      font-size: 1.8rem;
+      line-height: lineHeight(22, 18);
+      color: $gray;
+    }
+
+    @include flexBox(
+      (
+        flex-direction: column,
+        gap: 2.3rem 0,
+      )
+    );
+  }
+
+  @include maxWidth(1023px) {
+    &-list {
+      gap: 0 5rem;
+    }
+    &-item {
+      width: calc(25% - 3.75rem);
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-main {
+      padding: revert;
+    }
+    &-list {
+      gap: 5rem 2rem;
+      flex-wrap: wrap;
+    }
+    &-item {
+      width: calc(50% - 1rem);
+    }
+  }
+}

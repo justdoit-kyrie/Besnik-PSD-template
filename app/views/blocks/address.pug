@@ -1,0 +1,26 @@
+section.address 
+  .container
+    .address-main
+      +globalContent({heading: "Newar Me", title: "Find us near your citys.", className: "center"})
+      .address-content
+        .address-content-info
+          .address-content-info-heading
+            div
+              span.address-content-info-title Pickup restaurent point
+              span.address-content-info-desc Enter your delivery location
+            img.address-content-info-image(srcset="./images/Service.png 2x", alt="location pic")
+          .address-content-info-list
+            .address-content-info-item
+              span.address-content-info-item-title DEPATURE
+              span.address-content-info-item-desc Pickup restaurent point
+              .address-content-info-item-control
+                span 427 Edington Drive
+                i.address-content-info-item-icon.fas.fa-bullseye
+            .address-content-info-item
+              span.address-content-info-item-title ARRIVE
+              span.address-content-info-item-desc Drop home location
+              .address-content-info-item-control
+                span 4130  Public Works Drive
+                i.address-content-info-item-icon.fas.fa-bullseye
+        img.address-content-info-map(srcset="./images/Map.png 2x", alt="map pic")
+            

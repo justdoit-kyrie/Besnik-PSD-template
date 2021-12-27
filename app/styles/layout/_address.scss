@@ -1,0 +1,148 @@
+.address {
+  padding-top: var(--spacing);
+
+  &-content {
+    margin-top: 8rem;
+
+    @include flexBox(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+
+    &-info {
+      width: 51.2rem;
+
+      &-heading {
+        margin-bottom: 6.5rem;
+
+        @include flexBox(
+          (
+            align-items: center,
+            justify-content: space-between,
+          )
+        );
+
+        span {
+          display: block;
+        }
+      }
+
+      &-title {
+        font-size: 3.2rem;
+        line-height: lineHeight(40, 32);
+        font-weight: 700;
+      }
+
+      &-desc {
+        font-size: 1.5rem;
+        line-height: lineHeight(15, 15);
+        font-weight: 500;
+        color: $gray-blur;
+      }
+
+      &-list {
+        @include flexBox(
+          (
+            flex-direction: column,
+            gap: 5rem 0,
+          )
+        );
+      }
+
+      &-item {
+        span {
+          display: block;
+        }
+
+        &-title {
+          line-height: lineHeight(30, 14);
+          font-weight: 600;
+          color: $green;
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+        }
+
+        &-desc {
+          font-size: 2.8rem;
+          font-weight: 500;
+          line-height: lineHeight(40, 28);
+          color: $gray-blur;
+
+          margin-bottom: 3.3rem;
+        }
+
+        &-control {
+          position: relative;
+          padding-bottom: 2rem;
+
+          border-bottom: 1px solid $gray-blur;
+
+          span {
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+        }
+
+        &-icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: $red;
+        }
+      }
+    }
+  }
+
+  @include minWidth(1280px) {
+    &-content {
+      padding: 0 7rem;
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-content {
+      &-info {
+        width: 40rem;
+
+        &-title {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-content {
+      display: block;
+
+      &-info {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        &-map {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-content {
+      display: block;
+
+      &-info {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        &-title {
+          font-size: 2.2rem;
+        }
+      }
+
+    }
+  };
+}

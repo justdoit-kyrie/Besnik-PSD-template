@@ -1,0 +1,93 @@
+.service {
+  padding: var(--spacing) 2.5rem 0;
+
+  &-list {
+    max-width: 101rem;
+    margin: 5.5rem auto 9.6rem;
+
+    @include flexBox(
+      (
+        gap: 0 9.8rem,
+      )
+    );
+  }
+
+  &-item {
+    width: calc(calc(100% / 3) - 6.54rem);
+    padding: 0 1.8rem;
+    background: transparent;
+
+    text-align: center;
+
+    &-image {
+      margin: 0 auto;
+    }
+
+    &-title {
+      font-size: 2.6rem;
+      line-height: lineHeight(24, 26);
+      font-weight: 700;
+
+      margin: 4rem 0 2.4rem;
+    }
+
+    &-desc {
+      font-size: 1.6rem;
+      line-height: lineHeight(28, 16);
+      color: $gray;
+    }
+  }
+
+  &-bottom {
+    @include flexBox(
+      (
+        justify-content: center,
+        align-items: center,
+      )
+    );
+  }
+
+  @include maxWidth(1023px) {
+    padding-top: 7rem;
+
+    &-list {
+      gap: 0 3rem;
+      margin-bottom: 5.6rem;
+    }
+    &-item {
+      width: calc(calc(100% / 3) - 2rem);
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-list {
+      display: grid;
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-gap: 0 1rem;
+
+      overflow: auto;
+
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+
+      @include hideScroll();
+    }
+
+    &-item {
+      width: 100%;
+      scroll-snap-align: start;
+
+      text-align: left;
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding-right: revert;
+    padding-left: revert;
+    
+    &-list {
+      margin-bottom: 5.6rem;
+    }
+  }
+}

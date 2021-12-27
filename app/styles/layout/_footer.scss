@@ -1,0 +1,126 @@
+.footer {
+  background: $gray-lighter;
+  padding: 6rem 0 0;
+
+  &-top {
+    @include flexBox(
+      (
+        align-items: center,
+        gap: 0 12rem,
+      )
+    );
+    margin-bottom: 6rem;
+  }
+
+  &-bottom {
+    padding: 2.5rem 0;
+    border-top: 1px solid $gray-blur;
+
+    @include flexBox(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+
+    span {
+      font-size: 1.3rem;
+      line-height: lineHeight(15, 13);
+      color: $gray;
+    }
+
+    span.strong {
+      font-weight: 500;
+      color: $black;
+    }
+  }
+
+  &-content {
+    max-width: 27.5rem;
+  }
+
+  &-desc {
+    font-size: 1.6rem;
+    line-height: lineHeight(28, 16);
+    color: $gray;
+
+    display: block;
+    margin: 3.5rem 0 4rem;
+  }
+
+  &-socials {
+    @include flexBox(
+      (
+        gap: 0 2rem,
+      )
+    );
+  }
+
+  &-list {
+    flex: 1;
+    @include gridBox(
+      (
+        column-number: 4,
+        gap: 0 12.5rem,
+      )
+    );
+  }
+
+  &-item {
+    &-heading {
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      margin-bottom: 4rem;
+      display: block;
+    }
+
+    &-list {
+      @include flexBox(
+        (
+          gap: 1.7rem 0,
+          flex-direction: column,
+        )
+      );
+    }
+
+    &-text {
+      color: $gray;
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-top,
+    &-list {
+      gap: 0 7.5rem;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-top {
+      display: block;
+    }
+    &-content {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+    &-desc {
+      margin: 2rem 0 3rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-top {
+      margin-bottom: 3rem;
+    }
+    
+    &-list {
+      @include gridBox(
+        (
+          column-number: 2,
+          gap: 5rem,
+        )
+      );
+    }
+  }
+}

@@ -1,0 +1,157 @@
+// width, height
+@mixin size($config: ()) {
+  $config: extend(
+    (
+      width: auto,
+      height: auto,
+    ),
+    $config
+  );
+
+  width: map-get($config, width);
+  height: map-get($config, height);
+}
+
+// absoluteCenter
+@mixin absoluteCenter($direction: "x") {
+  position: absolute;
+  @if ($direction == "x") {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if ($direction == "y") {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if ($direction == "both") {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// absolute full size
+@mixin absoluteFull() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// flex box
+@mixin flexBox($config: ()) {
+  $config: extend(
+    (
+      display: flex,
+      align-items: stretch,
+      justify-content: flex-start,
+      flex-direction: row,
+      flex-wrap: nowrap,
+      gap: 0,
+    ),
+    $config
+  );
+  display: map-get($config, display);
+  align-items: map-get($config, align-items);
+  justify-content: map-get($config, justify-content);
+  flex-direction: map-get($config, flex-direction);
+  flex-wrap: map-get($config, flex-wrap);
+  gap: map-get($config, gap);
+}
+
+@mixin gridBox($config: ()) {
+  $config: extend(
+    (
+      display: grid,
+      column-number: 0,
+      row-number: 0,
+      grid-areas: unset,
+      gap: 0,
+    ),
+    $config
+  );
+  display: map-get($config, display);
+  @if map-get($config, column-number) != 0 {
+    grid-template-columns: repeat(map-get($config, column-number), 1fr);
+  }
+  @if map-get($config, row-number) != 0 {
+    grid-template-rows: repeat(map-get($config, row-number), 1fr);
+  }
+  grid-template-areas: map-get($config, grid-areas);
+  gap: map-get($config, gap);
+}
+
+// hide scroll bar for DOM element
+@mixin hideScroll() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// custom style scrollbar
+@mixin styleScroll($config: ()) {
+  $config: extend(
+    (
+      width: revert,
+      thumb-color: revert,
+      track-color: revert,
+      border-radius: revert,
+    ),
+    $config
+  );
+
+  &::-webkit-scrollbar {
+    width: map-get($config, width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: map-get($config, track-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($config, thumb-color);
+    border-radius: map-get($config, border-radius);
+  }
+}
+
+// text clamp
+@mixin textClamp($row: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+/*#region media for desktop first*/
+@mixin maxWidth($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin maxHeight($break-point) {
+  @media screen and (max-height: $break-point) {
+    @content;
+  }
+}
+/*#endregion*/
+
+/*#region media for mobile first */
+@mixin minWidth($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin minHeight($break-point) {
+  @media screen and (min-height: $break-point) {
+    @content;
+  }
+}
+/*#endregion*/
